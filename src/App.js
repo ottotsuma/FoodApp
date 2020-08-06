@@ -1,15 +1,16 @@
 import React, {useEffect, useState} from 'react';
 import Recipe from './Recipe'
 import './App.css';
+require("dotenv").config()
 
 const App = () => {
-  const APP_ID = '72ea6e0e'
-  const APP_KEY = '94ce9456d2748feb1d134f1487268b94	'
 
   const [recipes, setRecipes] = useState([]);
   const [search, setSearch] =useState('');
   const [query, setQuery] =useState('chicken');
-
+ 
+  // const APP_ID = process.env.APP_ID
+  // const APP_KEY = process.env.APP_KEY
 
   useEffect ( () => {
     getRecipes();
@@ -24,16 +25,6 @@ const App = () => {
       alert("Nothing found");
     }
   }
-
-//   fetch(
-//     `https://api.open5e.com/monsters/${current}/?format=json`
-//   )
-//   .then (function(resp){
-//     if (!resp.ok) {
-//       window.location = `/`
-//       alert(`${current} Not fount`);
-//     }
-// })
 
   const updateSearch = e => {
     setSearch(e.target.value);
