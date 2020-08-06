@@ -9,8 +9,6 @@ const App = () => {
   const [search, setSearch] =useState('');
   const [query, setQuery] =useState('chicken');
 
-
-
   useEffect ( () => {
     getRecipes();
   }, [query]);
