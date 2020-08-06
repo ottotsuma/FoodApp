@@ -8,9 +8,8 @@ const App = () => {
   const [recipes, setRecipes] = useState([]);
   const [search, setSearch] =useState('');
   const [query, setQuery] =useState('chicken');
- 
-  // const APP_ID = process.env.APP_ID
-  // const APP_KEY = process.env.APP_KEY
+
+
 
   useEffect ( () => {
     getRecipes();
