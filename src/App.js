@@ -2,8 +2,6 @@ import React, {useEffect, useState} from 'react';
 import Recipe from './Recipe'
 import './App.css';
 require("dotenv").config()
-console.log(process.env.APP_ID)
-console.log(process.env)
 
 const App = () => {
 
@@ -16,7 +14,7 @@ const App = () => {
   }, [query]);
 
   const getRecipes = async () => {
-    const response = await fetch (`https://api.edamam.com/search?q=${query}&app_id=${process.env.APP_ID}&app_key=${process.env.APP_KEY}`);
+    const response = await fetch (`https://api.edamam.com/search?q=${query}&app_id=${process.env.REACT_APP_APP_ID}&app_key=${process.env.REACT_APP_APP_KEY}`);
     const data = await response.json();
     setRecipes(data.hits);
     if (data.hits.length < 1) {
