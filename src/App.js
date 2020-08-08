@@ -2,6 +2,8 @@ import React, {useEffect, useState} from 'react';
 import Recipe from './Recipe'
 import './App.css';
 require("dotenv").config()
+console.log(process.env.APP_ID)
+console.log(process.env)
 
 const App = () => {
 
